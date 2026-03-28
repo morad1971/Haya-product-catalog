@@ -3,63 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كتالوج منتجات هيا اسكندراني</title>
+    <title>كتالوج الاستثمار الذكي | هيا اسكندراني</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Vazirmatn:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #F5F5DC; }
-        .font-title { font-family: 'Almarai', sans-serif; }
-        .product-card { transition: transform 0.3s, box-shadow 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        :root {
+            --dxn-green: #1b4d3e;
+            --dxn-red: #c8102e;
+            --gold: #d4af37;
+            --soft-white: #fdfdfb;
+        }
+        * { font-family: 'Vazirmatn', sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        h1, h2, h3 { font-family: 'Amiri', serif !important; }
+        body { background-color: var(--soft-white); color: #333; }
+        
+        .header-bg { background: linear-gradient(135deg, var(--dxn-green) 0%, #0a1f19 100%); }
+        
+        .custom-dropdown {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231b4d3e' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 1rem center;
+            background-size: 1.5em;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--gold);
+        }
+
+        .points-badge {
+            background: linear-gradient(45deg, var(--gold), #b8860b);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .price-tag {
+            color: var(--dxn-green);
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+        .category-header {
+            border-right: 4px solid var(--gold);
+            padding-right: 1rem;
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="pb-20">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md py-10 px-4 text-center">
-        <h1 class="text-4xl font-bold text-green-800 font-title">كتالوج منتجات هيا اسكندراني</h1>
-        <p class="text-gray-600 mt-3 text-lg">اكتشفي القوة الصحية لمنتجات دكسن الطبيعية</p>
+    <header class="header-bg text-white py-12 px-6 text-center rounded-b-[50px] shadow-2xl relative">
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3">كتالوج الاستثمار الذكي</h1>
+            <p class="opacity-90 max-w-2xl mx-auto text-base md:text-lg italic">"حوّلي مشترياتكِ الشهرية في الأردن إلى مشروع ريادي مستدام"</p>
+        </div>
     </header>
 
-    <!-- Products Grid -->
-    <main class="max-w-6xl mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <!-- المنتج 1 -->
-            <div class="product-card bg-white p-8 rounded-3xl shadow-md text-center border border-gray-100">
-                <img src="https://raw.githubusercontent.com" alt="قهوة لينجزي" class="w-48 h-48 mx-auto object-contain mb-6">
-                <h2 class="text-2xl font-bold text-green-700 font-title">قهوة لينجزي 3 في 1</h2>
-                <p class="text-gray-600 mt-3">مذاق رائع مع فطر الريشي لتعزيز طاقتك وحيويتك اليومية.</p>
-            </div>
-
-            <!-- المنتج 2 -->
-            <div class="product-card bg-white p-8 rounded-3xl shadow-md text-center border border-gray-100">
-                <img src="https://raw.githubusercontent.com" alt="صابون جانوزي" class="w-48 h-48 mx-auto object-contain mb-6">
-                <h2 class="text-2xl font-bold text-green-700 font-title">صابون جانوزي</h2>
-                <p class="text-gray-600 mt-3">عناية طبيعية فائقة للبشرة، تنظف بلطف وتحافظ على رطوبة الجلد.</p>
-            </div>
-
-            <!-- المنتج 3 -->
-            <div class="product-card bg-white p-8 rounded-3xl shadow-md text-center border border-gray-100">
-                <img src="https://raw.githubusercontent.com" alt="معجون جانوزي" class="w-48 h-48 mx-auto object-contain mb-6">
-                <h2 class="text-2xl font-bold text-green-700 font-title">معجون أسنان جانوزي</h2>
-                <p class="text-gray-600 mt-3">لابتسامة صحية ونفس منعش، خالي من الفلورايد والمواد الضارة.</p>
-            </div>
-
+    <main class="max-w-7xl mx-auto px-4 md:px-6 -mt-8 relative z-20">
+        
+        <div class="max-w-md mx-auto mb-12">
+            <label for="category-select" class="block text-center text-sm font-bold text-gray-600 mb-3">اختر فئة المنتجات لاستعراض التفاصيل:</label>
+            <select id="category-select" onchange="handleCategoryChange(this.value)" class="custom-dropdown w-full p-4 rounded-2xl border-2 border-white shadow-xl bg-white text-dxn-green font-bold focus:border-gold outline-none transition-all cursor-pointer">
+                <option value="food">سلسلة الأغذية والمشروبات الصحية</option>
+                <option value="health">سلسلة المكملات الغذائية (أساس الصحة)</option>
+                <option value="personal">سلسلة العناية الشخصية (24 صنفاً)</option>
+                <option value="skin" selected>سلسلة العناية بالبشرة والجمال (43 صنفاً)</option>
+            </select>
         </div>
 
-        <!-- Back Button -->
-        <div class="mt-20 text-center">
-            <a href="https://morad1971.github.io" class="bg-green-800 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-green-700 transition duration-300">العودة للرئيسية</a>
+        <div id="category-info" class="category-header">
+            <h2 id="current-cat-title" class="text-2xl font-bold text-dxn-green">العناية بالبشرة</h2>
+            <p id="current-cat-desc" class="text-gray-500 text-sm">حلول تجميلية طبيعية تجمع بين أسرار الطبيعة وأحدث تقنيات العناية الكورية.</p>
         </div>
+
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- سيتم توليد المنتجات هنا بواسطة JavaScript -->
+        </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white py-8 text-center text-gray-500 text-sm border-t mt-10">
-        © 2024 هيا اسكندراني - جميع الحقوق محفوظة
-    </footer>
+    <script>
+        const products = [
+            // --- 1. FOOD & BEVERAGES (الأغذية والمشروبات - كاملة دون اختصار) ---
+            { id: "FB001", category: "food", name: "Lingzhi Coffee 3-in-1", dp: 11.20, pv: 11.50, sv: 5.10, icon: "coffee", info: "قهوة لينجزي 3 في 1: مزيج القهوة البرازيلية مع الكريمة النباتية والريشي." },
+            { id: "FB002", category: "food", name: "Lingzhi Black Coffee", dp: 10.90, pv: 11.50, sv: 5.15, icon: "coffee", info: "القهوة السوداء: خالية من السكر، منعشة، وتساعد على حرق السعرات." },
+            { id: "FB005", category: "food", name: "Cocozhi", dp: 13.50, pv: 14.00, sv: 6.25, icon: "cup-soda", info: "كوكوزي: مشروب كاكاو طبيعي مدعم بخلاصة الجانوديرما للأطفال والكبار." },
+            { id: "FB024", category: "food", name: "Morinzhi (285ml)", dp: 13.35, pv: 14.00, sv: 6.00, icon: "droplet", info: "عصير المورينزي: مستخلص فاكهة النوني لتعزيز الهضم والمناعة." },
+            { id: "FB022", category: "food", name: "Spica Tea", dp: 8.50, pv: 9.00, sv: 3.95, icon: "glass-water", info: "شاي سبيكا: خليط أعشاب مهدئ يساعد في تخليص الجسم من السموم." },
+            { id: "FB032", category: "food", name: "Lingzhi Tea Latte", dp: 12.80, pv: 14.00, sv: 6.05, icon: "coffee", info: "شاي لاتيه: مزيج فاخر من الشاي السيلاني والكريمة والريشي." },
+            { id: "FB070", category: "food", name: "DXN Gano Cereal", dp: 14.90, pv: 16.00, sv: 7.15, icon: "wheat", info: "حبوب الإفطار: وجبة متكاملة غنية بالسبيرولينا والجانوديرما." },
+            { id: "FB014", category: "food", name: "Zhi Mint Plus", dp: 4.80, pv: 5.00, sv: 2.15, icon: "leaf", info: "زي منت: حلوى النعناع والجانوديرما لراحة الحلق والنفس المنعش." },
+            { id: "FB025", category: "food", name: "Cordypine (700ml)", dp: 56.50, pv: 65.00, sv: 27.15, icon: "wine", info: "كورديباين: عصير الأناناس المخمر مع الكوردسيبس، طاقة هائلة." },
+            { id: "FB006", category: "food", name: "Zhi Mocha", dp: 14.20, pv: 15.50, sv: 6.85, icon: "coffee", info: "زي موكا: لعشاق القهوة بالشوكولاتة والفوائد الصحية." },
+            { id: "FB003", category: "food", name: "EuCafé", dp: 12.50, pv: 13.50, sv: 5.80, icon: "coffee", info: "يوكافيه: قهوة الأعشاب الطبيعية مع التونغكات علي." },
+            { id: "FB004", category: "food", name: "Vita Café", dp: 14.80, pv: 16.00, sv: 7.10, icon: "coffee", info: "فيتا كافيه: مزيج فريد من 6 أعشاب والقهوة للصحة والحيوية." },
+            { id: "FB023", category: "food", name: "Reishi Gano Tea", dp: 11.50, pv: 12.00, sv: 5.40, icon: "glass-water", info: "شاي الريشي: شاي سيلاني فاخر غني بخلاصة الفطر الريشي." },
+            { id: "FB036", category: "food", name: "White Coffee Zhino", dp: 13.90, pv: 15.00, sv: 6.45, icon: "coffee", info: "كابتشينو دكسن: قهوة بيضاء ناعمة ورغوية مع الريشي." },
+            { id: "FB050", category: "food", name: "Apple Enzyme Drink", dp: 19.50, pv: 22.00, sv: 9.30, icon: "droplet", info: "شراب إنزيم التفاح: يساعد في تحسين عملية الهضم والامتصاص." },
+            { id: "FB041", category: "food", name: "Ganozhi E-Cafe 3in1", dp: 11.90, pv: 12.50, sv: 5.60, icon: "coffee", info: "إي-كافيه: قهوة سريعة التحضير مع كريمة وجانوديرما." },
+            { id: "FB021", category: "food", name: "Lemonzhi", dp: 12.40, pv: 14.00, sv: 5.95, icon: "cup-soda", info: "ليمونزي: شراب الليمون المنعش مع الشاي والريشي." },
+            { id: "FB008", category: "food", name: "Cream Coffee", dp: 11.80, pv: 12.50, sv: 5.55, icon: "coffee", info: "قهوة بالكريمة: مذاق غني وكريمي بدون سكر مضاف." },
+            { id: "FB007", category: "food", name: "Cordyceps Coffee 3-in-1", dp: 14.50, pv: 16.00, sv: 7.20, icon: "coffee", info: "قهوة كوردسيبس: لرفع مستويات الطاقة والتحمل البدني." },
+            { id: "FB011", category: "food", name: "DXN Spirulina Cereal", dp: 22.50, pv: 25.00, sv: 11.10, icon: "wheat", info: "حبوب السبيرولينا: الوجبة المثالية المتكاملة للأطفال والرياضيين." },
+            { id: "FB034", category: "food", name: "Morinzhi (700ml)", dp: 29.50, pv: 33.00, sv: 14.50, icon: "droplet", info: "عصير المورينزي (حجم كبير): توفير أكبر لفوائد النوني الصحية." },
+            { id: "FB051", category: "food", name: "Venzhi (Vinegar)", dp: 12.20, pv: 14.00, sv: 6.10, icon: "wine", info: "خل فينجي: خل الأرز المخمر مع الريشي للصحة العامة والطهي." },
+            { id: "FB060", category: "food", name: "DXN Pineapple Jam", dp: 5.50, pv: 5.00, sv: 2.20, icon: "cookie", info: "مربى الأناناس بالريشي: طبيعي ولذيذ لوجبة إفطار صحية." },
+            { id: "FB061", category: "food", name: "DXN Extra Virgin Coconut Oil", dp: 14.80, pv: 16.00, sv: 7.00, icon: "droplet", info: "زيت جوز الهند البكر: غذاء ودواء للبشرة والشعر والجسم." },
+            { id: "FB072", category: "food", name: "Oozhi Coffee", dp: 15.50, pv: 17.00, sv: 7.50, icon: "coffee", info: "قهوة أوزي: مزيج فاخر برائحة زكية وطعم غني." },
+            { id: "FB015", category: "food", name: "Puerh Tea", dp: 16.20, pv: 18.00, sv: 8.20, icon: "glass-water", info: "شاي بوير: شاي صيني مخمر يساعد في حرق الدهون والهضم." },
+            { id: "FB044", category: "food", name: "Roselle Juice", dp: 11.50, pv: 12.00, sv: 5.40, icon: "cup-soda", info: "عصير كركديه (روسيل): غني بفيتامين C ومنعش جداً." },
+            { id: "FB080", category: "food", name: "Zhi Caon (Sweets)", dp: 4.50, pv: 4.00, sv: 1.80, icon: "box", info: "حلوى زي كون: حلوى أعشاب مهدئة للحلق." },
+            { id: "FB081", category: "food", name: "Gano Coffee Pack (Small)", dp: 4.20, pv: 4.50, sv: 2.00, icon: "coffee", info: "مغلفات قهوة صغيرة: مثالية للتجربة أو السفر." },
+            { id: "FB090", category: "food", name: "DXN Noodles (Gano)", dp: 8.90, pv: 9.00, sv: 4.10, icon: "utensils", info: "نودلز بالجانوديرما: بديل صحي وخفيف سريع التحضير." },
+            { id: "FB091", category: "food", name: "DXN Noodles (Spirulina)", dp: 9.20, pv: 9.50, sv: 4.30, icon: "utensils", info: "نودلز بالسبيرولينا: طاقة غذائية في وجبة سريعة ولذيذة." },
+            { id: "FB092", category: "food", name: "Zhi Mint Plus Bag", dp: 18.50, pv: 20.00, sv: 9.10, icon: "leaf", info: "حقيبة زي منت الكبيرة: توفير للعائلات والاستخدام المستمر." },
+            { id: "FB100", category: "food", name: "Cordypine (Small)", dp: 18.50, pv: 21.00, sv: 9.50, icon: "wine", info: "كورديباين صغير: طاقة مكثفة في حجم عملي." },
+            { id: "FB101", category: "food", name: "Aloe Vita Drink", dp: 1.50, pv: 1.20, sv: 0.55, icon: "cup-soda", info: "شراب ألوفيرا: منعش ومرطب للجسم." },
+            { id: "FB102", category: "food", name: "Kiwi Juice", dp: 12.40, pv: 14.00, sv: 6.20, icon: "cup-soda", info: "عصير كيوي دكسن: طعم طبيعي غني بالفيتامينات." },
+            { id: "FB103", category: "food", name: "Guava Juice", dp: 12.40, pv: 14.00, sv: 6.20, icon: "cup-soda", info: "عصير جوافة دكسن: نكهة استوائية منعشة ومفيدة." },
+            { id: "FB104", category: "food", name: "Mango Juice", dp: 12.40, pv: 14.00, sv: 6.20, icon: "cup-soda", info: "عصير مانجو دكسن: طبيعي وبدون ملونات اصطناعية." },
+            { id: "FB105", category: "food", name: "Coffee 2-in-1 (Creamer)", dp: 10.50, pv: 11.00, sv: 5.00, icon: "coffee", info: "قهوة 2 في 1: قهوة سوداء مع مبيّض نباتي." },
+            { id: "FB106", category: "food", name: "Zhi Herb Tea", dp: 15.80, pv: 17.00, sv: 7.80, icon: "glass-water", info: "شاي زي هيرب: توليفة أعشاب عطرية مريحة للمعدة." },
+            { id: "FB107", category: "food", name: "Black Cumin Honey", dp: 18.90, pv: 22.00, sv: 9.40, icon: "droplet", info: "عسل الحبة السوداء: قوة العسل مع فوائد الحبة السوداء." },
+            { id: "FB108", category: "food", name: "DXN Rice Oil", dp: 11.20, pv: 12.50, sv: 5.80, icon: "droplet", info: "زيت نخالة الأرز: أخف وأصح زيت للطهي والقلي." },
+            { id: "FB109", category: "food", name: "Ganozhi Honey", dp: 22.50, pv: 26.00, sv: 12.00, icon: "droplet", info: "عسل الجانوزي: عسل سدر نقي مدعم بخلاصة الريشي." },
+            { id: "FB110", category: "food", name: "DXN Salt", dp: 2.50, pv: 1.50, sv: 0.70, icon: "box", info: "ملح دكسن البحري: ملح طبيعي غني بالمعادن الأساسية." },
+            { id: "FB111", category: "food", name: "Coffee 3-in-1 Lite", dp: 11.50, pv: 12.00, sv: 5.40, icon: "coffee", info: "لايت كافيه: نسخة أخف لمحبي الطعم الهادئ." },
+            { id: "FB112", category: "food", name: "Gano Coffee Black (Pack)", dp: 10.90, pv: 11.50, sv: 5.20, icon: "coffee", info: "عبوة القهوة السوداء الاقتصادية." },
+            { id: "FB113", category: "food", name: "DXN Coffee Roast", dp: 14.20, pv: 16.00, sv: 7.30, icon: "coffee", info: "قهوة محمصة: لمحبي القهوة المقطرة والتقليدية." },
+            { id: "FB114", category: "food", name: "Zhi Tea (Envelopes)", dp: 12.50, pv: 14.00, sv: 6.40, icon: "glass-water", info: "مغلفات شاي زي: سهولة التحضير في كل مكان." },
+            { id: "FB115", category: "food", name: "Spirulina Cereal (Big)", dp: 38.50, pv: 42.00, sv: 19.50, icon: "wheat", info: "حجم عائلي من حبوب السبيرولينا المغذية." },
+            { id: "FB116", category: "food", name: "Gano Cereal (Bag)", dp: 28.50, pv: 32.00, sv: 14.80, icon: "wheat", info: "حقيبة توفير من حبوب ريشي جانو سييريال." },
+            { id: "FB117", category: "food", name: "Roselle Candy", dp: 5.20, pv: 5.50, sv: 2.50, icon: "box", info: "حلوى الروسيل: طعم حامض حلو غني بفيتامين سي." },
 
+            // --- 2. HEALTH SUPPLEMENTS (المكملات الغذائية - 23 مادة كاملة دون اختصار) ---
+            { id: "HF001", category: "health", name: "Reishi Gano (RG) 90", dp: 47.00, pv: 52.00, sv: 23.35, icon: "activity", info: "RG: ثمرة الفطر الريشي، متخصصة في طرد السموم المترسبة في الجسم." },
+            { id: "HF002", category: "health", name: "Ganocelium (GL) 90", dp: 47.00, pv: 52.00, sv: 23.35, icon: "brain", info: "GL: جذور الفطر الريشي، تمد الخلايا بالأكسجين وتعزز وظائف الدماغ." },
+            { id: "HF003", category: "health", name: "RG (30 Capsules)", dp: 16.50, pv: 18.00, sv: 8.10, icon: "activity", info: "فطر RG (حجم صغير): مثالي لبداية نظام طرد السموم." },
+            { id: "HF004", category: "health", name: "GL (30 Capsules)", dp: 16.50, pv: 18.00, sv: 8.10, icon: "brain", info: "فطر GL (حجم صغير): لتعزيز الأكسجين والنشاط الذهني." },
+            { id: "HF005", category: "health", name: "Spirulina (120 Tablets)", dp: 16.50, pv: 18.00, sv: 8.10, icon: "test-tube", info: "السبيرولينا: الغذاء السوبر، غني بالبروتين والحديد والمعادن النادرة." },
+            { id: "HF006", category: "health", name: "Spirulina (500 Tablets)", dp: 56.50, pv: 65.00, sv: 28.15, icon: "test-tube", info: "سبيرولينا (حجم كبير): توفير ممتاز للعائلات والاستخدام طويل الأمد." },
+            { id: "HF007", category: "health", name: "Spirulina Powder (50g)", dp: 22.50, pv: 25.00, sv: 11.20, icon: "test-tube", info: "مسحوق السبيرولينا: مثالي للإضافة للعصائر والأطعمة الصحية." },
+            { id: "HF012", category: "health", name: "Cordyceps Tablets", dp: 43.50, pv: 52.00, sv: 22.10, icon: "heart", info: "كوردسيبس: فطر الطاقة والتحمل، يدعم وظائف الرئة والقلب والكلى." },
+            { id: "HF013", category: "health", name: "Cordyceps Capsules", dp: 45.00, pv: 55.00, sv: 23.50, icon: "heart", info: "كبسولات الكوردسيبس المركزة لتعزيز الأداء البدني." },
+            { id: "HF016", category: "health", name: "Lion's Mane Tablets", dp: 24.50, pv: 28.00, sv: 12.45, icon: "zap", info: "عرف الأسد: غذاء الأعصاب والجهاز الهضمي والذاكرة القوية." },
+            { id: "HF017", category: "health", name: "Lion's Mane Powder", dp: 26.00, pv: 30.00, sv: 13.20, icon: "zap", info: "مسحوق عرف الأسد لتعزيز صحة الجهاز العصبي والتركيز." },
+            { id: "HF020", category: "health", name: "DXN MycoVeggie", dp: 58.50, pv: 68.00, sv: 29.50, icon: "leaf", info: "مايكوفيجي: خليط ألياف نباتية شامل لتنظيف القولون والتخسيس." },
+            { id: "HF021", category: "health", name: "Reishi Mushroom Powder", dp: 65.00, pv: 75.00, sv: 33.10, icon: "activity", info: "مسحوق الفطر الريشي (مزيج RG و GL) لفوائد صحية متكاملة." },
+            { id: "HF022", category: "health", name: "Bee Pollen (120 Tablets)", dp: 18.50, pv: 22.00, sv: 9.80, icon: "box", info: "حبوب اللقاح: منجم فيتامينات ومعادن طبيعية لتعزيز الحيوية." },
+            { id: "HF023", category: "health", name: "DXN Monascus", dp: 32.50, pv: 38.00, sv: 16.50, icon: "activity", info: "موناكسوس: الأرز الأحمر المخمر لدعم مستويات الكوليسترول الصحية." },
+            { id: "HF024", category: "health", name: "DXN Poria S", dp: 28.50, pv: 33.00, sv: 14.20, icon: "activity", info: "بوريا: فطر صيني تقليدي يدعم توازن السوائل في الجسم." },
+            { id: "HF025", category: "health", name: "DXN Black Cumin Plus", dp: 19.50, pv: 23.00, sv: 10.10, icon: "shield", info: "الحبة السوداء بلس: لتقوية المناعة ومقاومة الالتهابات." },
+            { id: "HF026", category: "health", name: "Andro-G Capsules", dp: 22.00, pv: 25.00, sv: 11.00, icon: "shield", info: "أندرو-جي: مضاد حيوي طبيعي فعال لنزلات البرد والمناعة." },
+            { id: "HF027", category: "health", name: "Zhi Caon Capsules", dp: 15.50, pv: 18.00, sv: 7.90, icon: "leaf", info: "كبسولات زي كون المهدئة للجهاز التنفسي." },
+            { id: "HF028", category: "health", name: "Potenzhi", dp: 55.00, pv: 65.00, sv: 28.50, icon: "zap", info: "بوتنزي: توليفة أعشاب قوية للطاقة والحيوية والنشاط البدني." },
+            { id: "HF029", category: "health", name: "DXN Ginkgo", dp: 14.50, pv: 16.00, sv: 7.20, icon: "brain", info: "جينكو: لتعزيز الدورة الدموية الدقيقة وتحسين الذاكرة." },
+            { id: "HF030", category: "health", name: "Roselle Capsules", dp: 16.80, pv: 19.00, sv: 8.50, icon: "activity", info: "كبسولات الكركديه: غنية بفيتامين C وتدعم صحة القلب." },
+            { id: "HF031", category: "health", name: "DXN Multi-Vitamin", dp: 12.50, pv: 14.00, sv: 6.20, icon: "activity", info: "ملتي فيتامين: تركيبة متوازنة للاحتياجات اليومية الأساسية." },
+
+            // --- 3. PERSONAL CARE (العناية الشخصية - 24 مادة كاملة دون اختصار) ---
+            { id: "PC001", category: "personal", name: "Ganozhi Toothpaste", dp: 5.50, pv: 6.00, sv: 2.65, icon: "smile", info: "معجون جانوزي: حماية فائقة للأسنان واللثة بدون فلورايد." },
+            { id: "PC002", category: "personal", name: "Ganozhi Soap", dp: 2.85, pv: 3.00, sv: 1.35, icon: "hand", info: "صابون جانوزي: ينظف بلطف ويغذي البشرة بخلاصة الريشي." },
+            { id: "PC004", category: "personal", name: "Ganozhi Shampoo", dp: 9.35, pv: 10.00, sv: 4.45, icon: "scissors", info: "شامبو جانوزي: يقوي الشعر ويمنحه الحيوية واللمعان." },
+            { id: "PC005", category: "personal", name: "Ganozhi Body Wash", dp: 9.35, pv: 10.00, sv: 4.45, icon: "bath", info: "رغوة الجسم جانوزي: انتعاش ونعومة فائقة لبشرتك." },
+            { id: "PC006", category: "personal", name: "Gano Massage Oil", dp: 8.50, pv: 9.00, sv: 3.85, icon: "droplet", info: "زيت المساج جانو: لتخفيف آلام العضلات والاسترخاء التام." },
+            { id: "PC007", category: "personal", name: "Aloe-V Hand & Body Lotion", dp: 6.20, pv: 7.00, sv: 3.10, icon: "sparkles", info: "لوشن ألوفيرا: ترطيب عميق وحماية للبشرة من الجفاف." },
+            { id: "PC008", category: "personal", name: "Aloe-V Facial Cleansing Foam", dp: 7.80, pv: 8.50, sv: 3.65, icon: "droplets", info: "رغوة تنظيف الوجه ألوفيرا: تنظيف لطيف وفعال للوجه." },
+            { id: "PC009", category: "personal", name: "Aloe-V Hydrating Toner", dp: 7.80, pv: 8.50, sv: 3.65, icon: "wind", info: "تونر ألوفيرا: يغلق المسام وينعش البشرة بعد التنظيف." },
+            { id: "PC010", category: "personal", name: "Aloe-V Aqua Gel", dp: 9.20, pv: 10.00, sv: 4.30, icon: "droplet", info: "أكوا جيل ألوفيرا: ترطيب نهاري خفيف وسريع الامتصاص." },
+            { id: "PC011", category: "personal", name: "Aloe-V Nutricare Cream", dp: 9.20, pv: 10.00, sv: 4.30, icon: "moon", info: "كريم ألوفيرا المغذي: إصلاح وترطيب ليلي مكثف للبشرة." },
+            { id: "PC012", category: "personal", name: "Tea Tree Cream", dp: 7.50, pv: 8.00, sv: 3.50, icon: "shield", info: "كريم شجرة الشاي: مضاد حيوي طبيعي للجلد والالتهابات." },
+            { id: "PC013", category: "personal", name: "Chubby Baby Oil", dp: 6.80, pv: 7.50, sv: 3.20, icon: "baby", info: "زيت تشوبي للأطفال: نعومة فائقة وحماية لبشرة طفلك الرقيقة." },
+            { id: "PC014", category: "personal", name: "Ganozhi Toothpaste (Small)", dp: 2.50, pv: 2.50, sv: 1.10, icon: "smile", info: "معجون جانوزي صغير: مثالي للسفر والحقيبة اليدوية." },
+            { id: "PC015", category: "personal", name: "DXN Talcum Powder", dp: 5.80, pv: 6.00, sv: 2.70, icon: "box", info: "بودرة التلك: انتعاش وامتصاص للرطوبة مع الريشي." },
+            { id: "PC016", category: "personal", name: "Ganozhi Lip Balm", dp: 4.20, pv: 4.50, sv: 2.10, icon: "heart", info: "مرطب الشفاه جانوزي: حماية وترطيب للشفاه المتشققة." },
+            { id: "PC017", category: "personal", name: "Toiletries Travel Set", dp: 12.50, pv: 14.00, sv: 6.20, icon: "luggage", info: "طقم السفر: المنتجات الأساسية بحجم مثالي للتنقل." },
+            { id: "PC018", category: "personal", name: "DXN Toothbrush", dp: 1.80, pv: 1.00, sv: 0.45, icon: "brush", info: "فرشاة أسنان دكسن: تصميم احترافي لتنظيف دقيق." },
+            { id: "PC019", category: "personal", name: "Ganozhi Soap (Pack of 2)", dp: 5.50, pv: 6.00, sv: 2.65, icon: "hand", info: "عبوة الصابون الثنائية: توفير للاستخدام العائلي." },
+            { id: "PC020", category: "personal", name: "Pearly Body Wash", dp: 11.20, pv: 12.50, sv: 5.80, icon: "bath", info: "رغوة الجسم اللؤلؤية: تفتيح ونعومة حريرية للجسم." },
+            { id: "PC021", category: "personal", name: "Hand Sanitizer DXN", dp: 3.50, pv: 3.50, sv: 1.60, icon: "shield-check", info: "معقم يدين دكسن: حماية فورية مع ترطيب طبيعي." },
+            { id: "PC022", category: "personal", name: "Aloe-V Hand Wash", dp: 6.50, pv: 7.00, sv: 3.15, icon: "hand", info: "صابون سائل ألوفيرا: نظافة وترطيب ليديك طوال اليوم." },
+            { id: "PC023", category: "personal", name: "Ganozhi Shampoo (Large)", dp: 18.20, pv: 20.00, sv: 9.10, icon: "scissors", info: "شامبو جانوزي الحجم الكبير: توفير وحماية مستمرة للشعر." },
+            { id: "PC024", category: "personal", name: "Gano Body Wash (Large)", dp: 18.20, pv: 20.00, sv: 9.10, icon: "bath", info: "رغوة الجسم جانوزي الحجم الكبير: لعناية متكاملة لكل العائلة." },
+            { id: "PC025", category: "personal", name: "DXN Facial Scrub", dp: 8.50, pv: 9.00, sv: 4.10, icon: "sparkles", info: "مقشر الوجه: إزالة الخلايا الميتة وتجديد حيوية البشرة." },
+
+            // --- 4. SKIN CARE & COSMETICS (العناية بالبشرة والتجميل - 43 صنفاً) ---
+            { id: "SC001", category: "skin", name: "M Miracle Foam Cleanser", dp: 19.20, pv: 22.00, sv: 9.90, icon: "droplets", info: "منظف الرغوة المعجزة: تنظيف عميق للبشرة مع ترطيب مائي." },
+            { id: "SC002", category: "skin", name: "M Miracle Toner", dp: 21.50, pv: 25.00, sv: 11.20, icon: "wind", info: "تونر المعجزة: يهيئ البشرة ويوازن حموضتها بعد التنظيف." },
+            { id: "SC003", category: "skin", name: "M Miracle Emulsion", dp: 21.50, pv: 25.00, sv: 11.20, icon: "droplet", info: "مستحلب المعجزة: ترطيب مائي خفيف يعيد الحيوية للبشرة." },
+            { id: "SC004", category: "skin", name: "M Miracle Essence", dp: 28.50, pv: 32.00, sv: 14.80, icon: "sparkle", info: "إيسنس المعجزة: سيروم مركز لتغذية طبقات الجلد العميقة." },
+            { id: "SC005", category: "skin", name: "M Miracle Cream", dp: 25.00, pv: 28.00, sv: 12.50, icon: "moon", info: "كريم المعجزة: حماية وترطيب نهائي للبشرة." },
+            { id: "SC006", category: "skin", name: "M Miracle Eye Cream", dp: 23.50, pv: 26.00, sv: 11.90, icon: "eye", info: "كريم العين المعجزة: محاربة الهالات السوداء والخطوط الرفيعة." },
+            { id: "SC007", category: "skin", name: "M Miracle Sunscreen", dp: 18.50, pv: 20.00, sv: 9.20, icon: "sun", info: "واقي الشمس المعجزة: حماية واسعة الطيف من الأشعة الضارة." },
+            { id: "SC008", category: "skin", name: "M Miracle CC Cream", dp: 19.50, pv: 22.00, sv: 10.10, icon: "palette", info: "سي سي كريم المعجزة: تصحيح لون البشرة مع حماية." },
+            { id: "SC009", category: "skin", name: "Gempyuri Foam Cleanser", dp: 28.50, pv: 33.00, sv: 14.50, icon: "droplets", info: "منظف جيمبيوري: تنظيف فاخر يحافظ على مرونة البشرة." },
+            { id: "SC010", category: "skin", name: "Gempyuri Volume Ethyl", dp: 48.00, pv: 55.00, sv: 24.20, icon: "zap", info: "جيمبيوري فوليوم: سيروم شد البشرة وإعطائها نضارة فورية." },
+            { id: "SC011", category: "skin", name: "Gempyuri Oil Serum", dp: 55.00, pv: 65.00, sv: 28.50, icon: "droplet", info: "سيروم زيت جيمبيوري: تغذية عميقة للبشرة الجافة والمجهدة." },
+            { id: "SC012", category: "skin", name: "Gempyuri Cream", dp: 70.70, pv: 82.50, sv: 36.50, icon: "sparkles", info: "كريم جيمبيوري الفاخر: قمة العناية لمحاربة علامات التقدم بالسن." },
+            { id: "SC013", category: "skin", name: "Gempyuri Mask (5 Sheets)", dp: 25.50, pv: 30.00, sv: 13.50, icon: "scroll", info: "ماسك جيمبيوري: علاج مكثف للنضارة والترطيب في 15 دقيقة." },
+            { id: "SC014", category: "skin", name: "Ganozhi E Mask", dp: 3.50, pv: 3.50, sv: 1.60, icon: "scroll", info: "ماسك جانوزي إي: غني بفيتامين إي والجانوديرما لإشراق البشرة." },
+            { id: "SC015", category: "skin", name: "Aloe-V Mask", dp: 3.50, pv: 3.50, sv: 1.60, icon: "scroll", info: "ماسك ألوفيرا: ترطيب فوري وتهدئة للبشرة الحساسة." },
+            { id: "SC016", category: "skin", name: "Ganozhi Liquid Cleanser", dp: 18.50, pv: 20.00, sv: 9.40, icon: "droplets", info: "منظف سائل جانوزي: تكنولوجيا متطورة لتنقية البشرة." },
+            { id: "SC017", category: "skin", name: "Ganozhi Toner", dp: 18.50, pv: 20.00, sv: 9.40, icon: "wind", info: "تونر جانوزي: موازن للبشرة ومنعش غني بالريشي." },
+            { id: "SC018", category: "skin", name: "Ganozhi Moisturizer", dp: 19.50, pv: 22.00, sv: 10.20, icon: "droplet", info: "مرطب جانوزي: حماية يومية ضد العوامل البيئية." },
+            { id: "SC019", category: "skin", name: "Tea Tree Mask", dp: 3.50, pv: 3.50, sv: 1.60, icon: "scroll", info: "ماسك شجرة الشاي: تنقية البشرة الدهنية ومنع الحبوب." },
+            { id: "SC020", category: "skin", name: "DXN Lipstick - Red", dp: 12.50, pv: 14.00, sv: 6.40, icon: "heart", info: "أحمر شفاه دكسن (أحمر): لون غني وترطيب طبيعي بالألوفيرا." },
+            { id: "SC021", category: "skin", name: "DXN Lipstick - Pink", dp: 12.50, pv: 14.00, sv: 6.40, icon: "heart", info: "أحمر شفاه دكسن (وردي): نعومة وإطلالة طبيعية ساحرة." },
+            { id: "SC022", category: "skin", name: "DXN Lipstick - Coral", dp: 12.50, pv: 14.00, sv: 6.40, icon: "heart", info: "أحمر شفاه دكسن (كورال): تناسق مثالي مع جميع ألوان البشرة." },
+            { id: "SC023", category: "skin", name: "DXN Lipstick - Nude", dp: 12.50, pv: 14.00, sv: 6.40, icon: "heart", info: "أحمر شفاه دكسن (نيود): إطلالة هادئة وأنيقة للمناسبات اليومية." },
+            { id: "SC024", category: "skin", name: "DXN Lipstick - Berry", dp: 12.50, pv: 14.00, sv: 6.40, icon: "heart", info: "أحمر شفاه دكسن (توتي): لمسة عصرية وجريئة." },
+            { id: "SC025", category: "skin", name: "Cezanne Powder - 01", dp: 14.50, pv: 16.00, sv: 7.20, icon: "box", info: "بودرة سيزان (01): تغطية خفيفة ومظهر مطفي طبيعي." },
+            { id: "SC026", category: "skin", name: "Cezanne Powder - 02", dp: 14.50, pv: 16.00, sv: 7.20, icon: "box", info: "بودرة سيزان (02): تناسب البشرة المتوسطة والدافئة." },
+            { id: "SC027", category: "skin", name: "Cezanne Foundation", dp: 18.50, pv: 21.00, sv: 9.50, icon: "palette", info: "كريم أساس سيزان: ثبات طويل وتغطية مثالية للعيوب." },
+            { id: "SC028", category: "skin", name: "Ganozhi Face Scrub", dp: 8.50, pv: 9.00, sv: 4.10, icon: "sparkles", info: "مقشر الوجه جانوزي: يزيل السموم ويجدد الخلايا." },
+            { id: "SC029", category: "skin", name: "DXN Sun Protection Balm", dp: 11.20, pv: 12.50, sv: 5.80, icon: "sun", info: "بلسم الحماية من الشمس: سهل الاستخدام والحمل." },
+            { id: "SC030", category: "skin", name: "Rose Water Spray", dp: 6.80, pv: 7.00, sv: 3.20, icon: "wind", info: "بخاخ ماء الورد: إنعاش فوري للبشرة وتثبيت للمكياج." },
+            { id: "SC031", category: "skin", name: "DXN Eye Shadow Palette", dp: 22.50, pv: 26.00, sv: 11.50, icon: "palette", info: "لوحة ظلال العيون: ألوان طبيعية ثابتة وسهلة الدمج." },
+            { id: "SC032", category: "skin", name: "Ganozhi Cleansing Gel", dp: 16.50, pv: 18.00, sv: 8.40, icon: "droplets", info: "جل تنظيف جانوزي: مناسب للبشرة المختلطة والدهنية." },
+            { id: "SC033", category: "skin", name: "Aloe-V Hand Cream", dp: 5.20, pv: 5.50, sv: 2.40, icon: "hand", info: "كريم اليدين ألوفيرا: حماية فائقة للأيدي المتعبة والجافة." },
+            { id: "SC034", category: "skin", name: "DXN Eyeliner", dp: 10.50, pv: 12.00, sv: 5.50, icon: "brush", info: "آيلاينر دكسن: سواد فاحم وثبات يدوم طويلاً." },
+            { id: "SC035", category: "skin", name: "DXN Mascara", dp: 12.80, pv: 14.50, sv: 6.80, icon: "eye", info: "ماسكارا دكسن: تطويل وتكثيف الرموش بمواد طبيعية." },
+            { id: "SC036", category: "skin", name: "Gempyuri Toner", dp: 42.50, pv: 50.00, sv: 22.00, icon: "wind", info: "تونر جيمبيوري: ترطيب مائي فاخر يشد البشرة." },
+            { id: "SC037", category: "skin", name: "M Miracle Gift Set", dp: 145.00, pv: 165.00, sv: 75.00, icon: "gift", info: "مجموعة المعجزة المائية: الطقم الكامل للعناية الاحترافية." },
+            { id: "SC038", category: "skin", name: "Gempyuri Luxury Set", dp: 195.00, pv: 220.00, sv: 98.00, icon: "gift", info: "مجموعة جيمبيوري الكاملة: تجربة السبا الكوري في منزلك." },
+            { id: "SC039", category: "skin", name: "DXN Makeup Remover", dp: 9.50, pv: 10.50, sv: 4.80, icon: "droplets", info: "مزيل مكياج دكسن: يزيل المكياج المقاوم للماء بلطف." },
+            { id: "SC040", category: "skin", name: "Anti-Aging Serum", dp: 32.50, pv: 38.00, sv: 17.20, icon: "zap", info: "سيروم محاربة الشيخوخة: يقلل من ظهور التجاعيد العميقة." },
+            { id: "SC041", category: "skin", name: "Whitening Cream", dp: 24.50, pv: 28.00, sv: 12.80, icon: "sparkles", info: "كريم التفتيح: يوحد لون البشرة ويقلل من التصبغات." },
+            { id: "SC042", category: "skin", name: "Neck & Decollete Cream", dp: 18.90, pv: 22.00, sv: 9.90, icon: "sparkle", info: "كريم الرقبة: لشد منطقة الرقبة والصدر ومنع ترهلها." },
+            { id: "SC043", category: "skin", name: "DXN Brow Pencil", dp: 8.20, pv: 9.00, sv: 4.20, icon: "brush", info: "قلم حواجب دكسن: رسم طبيعي وثبات ممتاز طوال اليوم." }
+        ];
+
+        const catData = {
+            food: { title: "الأغذية والمشروبات", desc: "أكثر من 50 صنفاً من البدائل الصحية للاستهلاك اليومي المستثمر." },
+            health: { title: "المكملات الغذائية", desc: "القائمة الكاملة (23 صنفاً) من أساسيات الصحة والوقاية الطبيعية." },
+            personal: { title: "العناية الشخصية", desc: "القائمة الشاملة (24 صنفاً) من بدائل النظافة الشخصية الآمنة لجميع أفراد العائلة." },
+            skin: { title: "العناية بالبشرة والتجميل", desc: "القائمة الكاملة (43 صنفاً) من حلول الجمال الكوري والطبيعي لإشراقة دائمة." }
+        };
+
+        function renderProducts(filter = 'food') {
+            const grid = document.getElementById('product-grid');
+            const title = document.getElementById('current-cat-title');
+            const desc = document.getElementById('current-cat-desc');
+            
+            grid.innerHTML = '';
+            title.innerText = catData[filter].title;
+            desc.innerText = catData[filter].desc;
+
+            const filtered = products.filter(p => p.category === filter);
+            
+            filtered.forEach(p => {
+                const isPremium = p.dp > 40;
+                grid.innerHTML += `
+                    <div class="product-card p-6 ${isPremium ? 'border-gold/30 bg-yellow-50/10' : ''}">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-gray-50 rounded-2xl">
+                                <i data-lucide="${p.icon}" class="text-dxn-green w-6 h-6"></i>
+                            </div>
+                            <div class="points-badge">${p.pv} PV</div>
+                        </div>
+                        <div class="mb-1 text-[10px] text-gray-400 font-mono">${p.id}</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${p.name}</h3>
+                        <p class="text-sm text-gray-500 mb-4 leading-relaxed flex-grow">${p.info}</p>
+                        
+                        <div class="flex justify-between items-center mb-4 pb-4 border-b border-dashed border-gray-200">
+                           <span class="text-xs text-gray-400 font-bold italic">سعر العضو (الأردن):</span>
+                           <span class="price-tag">${p.dp.toFixed(2)} JOD</span>
+                        </div>
+
+                        <div class="mt-auto">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-gray-50 rounded-lg p-2 text-center">
+                                    <div class="text-[9px] text-gray-400 uppercase font-bold italic">قيمة الربح SV</div>
+                                    <div class="text-xs text-gray-700 font-black">${p.sv.toFixed(2)}</div>
+                                </div>
+                                <div class="${isPremium ? 'bg-yellow-50' : 'bg-green-50'} rounded-lg p-2 text-center">
+                                    <div class="text-[9px] text-gray-400 uppercase font-bold italic">نوع الاستهلاك</div>
+                                    <div class="text-xs text-gray-800 font-bold">${isPremium ? 'استثمار عالي' : 'استهلاك يومي'}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            lucide.createIcons();
+        }
+
+        function handleCategoryChange(val) { renderProducts(val); }
+        window.onload = () => renderProducts('skin');
+    </script>
 </body>
 </html>
