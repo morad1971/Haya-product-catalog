@@ -37,6 +37,7 @@
         .product-card {
             background: white;
             border-radius: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
             overflow: hidden;
             transition: all 0.4s ease;
             border: 1px solid #f0f0f0;
@@ -91,10 +92,10 @@
         <div class="max-w-md mx-auto mb-12">
             <label for="category-select" class="block text-center text-sm font-bold text-gray-600 mb-3">اختر فئة المنتجات:</label>
             <select id="category-select" onchange="handleCategoryChange(this.value)" class="custom-dropdown w-full p-4 rounded-2xl border-2 border-white shadow-xl bg-white text-dxn-green font-bold focus:border-gold outline-none transition-all cursor-pointer">
-                <option value="food">سلسلة الأغذية والمشروبات الصحية</option>
+                <option value="food" selected>سلسلة الأغذية والمشروبات الصحية</option>
                 <option value="health">سلسلة المكملات الغذائية (أساس الصحة)</option>
                 <option value="personal">سلسلة العناية الشخصية (24 صنفاً)</option>
-                <option value="skin" selected>سلسلة العناية بالبشرة والجمال (43 صنفاً)</option>
+                <option value="skin">سلسلة العناية بالبشرة والجمال (43 صنفاً)</option>
             </select>
         </div>
 
@@ -103,33 +104,31 @@
                 <img id="cat-image" src="images/value.png" class="w-full h-full object-contain">
             </div>
             <div>
-                <h2 id="current-cat-title" class="text-2xl font-bold text-dxn-green">العناية بالبشرة</h2>
-                <p id="current-cat-desc" class="text-gray-500 text-sm">حلول تجميلية طبيعية تجمع بين أسرار الطبيعة وأحدث تقنيات العناية الكورية.</p>
+                <h2 id="current-cat-title" class="text-2xl font-bold text-dxn-green">الأغذية والمشروبات</h2>
+                <p id="current-cat-desc" class="text-gray-500 text-sm">بدائل صحية يومية تعزز استثماركِ المالي.</p>
             </div>
         </div>
 
         <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- سيتم توليد المنتجات هنا بواسطة JavaScript -->
-        </div>
+            </div>
 
-        <!-- أزرار العمل السريعة باستخدام الصور المتوفرة -->
         <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100">
+            <a href="https://morad1971.github.io/Haya-DXN/" class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100 hover:border-gold transition-all">
                 <img src="images/join.png" class="w-12 h-12 mx-auto mb-2">
-                <span class="text-xs font-bold text-gray-600">انضمي إلينا</span>
-            </div>
-            <div class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100">
+                <span class="text-xs font-bold text-gray-600">الرئيسية</span>
+            </a>
+            <a href="https://morad1971.github.io/Haya-Budget/" class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100 hover:border-gold transition-all">
                 <img src="images/training.png" class="w-12 h-12 mx-auto mb-2">
-                <span class="text-xs font-bold text-gray-600">تدريبات الفريق</span>
-            </div>
-            <div class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100">
+                <span class="text-xs font-bold text-gray-600">حاسبة الميزانية</span>
+            </a>
+            <div class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100 opacity-50 cursor-not-allowed">
                 <img src="images/download.png" class="w-12 h-12 mx-auto mb-2">
-                <span class="text-xs font-bold text-gray-600">تحميل القائمة</span>
+                <span class="text-xs font-bold text-gray-600">تحميل PDF (قريباً)</span>
             </div>
-            <div class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100">
+            <a href="https://wa.me/yournumber" class="bg-white p-4 rounded-2xl text-center shadow-sm border border-gray-100 hover:border-gold transition-all">
                 <img src="images/ask.png" class="w-12 h-12 mx-auto mb-2">
-                <span class="text-xs font-bold text-gray-600">اسألي خبيراً</span>
-            </div>
+                <span class="text-xs font-bold text-gray-600">استشارة واتساب</span>
+            </a>
         </div>
     </main>
 
@@ -141,7 +140,7 @@
 
     <script>
         const products = [
-            // --- 1. FOOD & BEVERAGES (الأغذية والمشروبات) ---
+            // --- بياناتك الأصلية (تم الاحتفاظ بـ 100% منها) ---
             { id: "FB001", category: "food", name: "Lingzhi Coffee 3-in-1", dp: 11.20, pv: 11.50, sv: 5.10, icon: "coffee", info: "مزج القهوة البرازيلية مع الكريمة النباتية والريشي." },
             { id: "FB002", category: "food", name: "Lingzhi Black Coffee", dp: 10.90, pv: 11.50, sv: 5.15, icon: "coffee", info: "خالية من السكر، منعشة، وتساعد على حرق السعرات." },
             { id: "FB005", category: "food", name: "Cocozhi", dp: 13.50, pv: 14.00, sv: 6.25, icon: "cup-soda", info: "مشروب كاكاو طبيعي مدعم بخلاصة الجانوديرما للأطفال والكبار." },
@@ -291,10 +290,10 @@
         ];
 
         const catData = {
-            food: { title: "الأغذية والمشروبات", desc: "بدائل صحية يومية.", icon: "images/value.png" },
-            health: { title: "المكملات الغذائية", desc: "القائمة الكاملة لأساس الصحة.", icon: "images/health.png" },
-            personal: { title: "العناية الشخصية", desc: "نظافة آمنة لجميع العائلة.", icon: "images/project.png" },
-            skin: { title: "العناية بالبشرة والجمال", desc: "أسرار الجمال الكوري والطبيعي.", icon: "images/value.png" }
+            food: { title: "الأغذية والمشروبات", desc: "بدائل صحية يومية تعزز استثماركِ المالي.", icon: "images/value.png" },
+            health: { title: "المكملات الغذائية", desc: "القائمة الكاملة لأساس الصحة والوقاية.", icon: "images/health.png" },
+            personal: { title: "العناية الشخصية", desc: "نظافة آمنة لجميع العائلة بمكونات طبيعية.", icon: "images/project.png" },
+            skin: { title: "العناية بالبشرة والجمال", desc: "أسرار الجمال الكوري والطبيعي في منزلكِ.", icon: "images/value.png" }
         };
 
         function renderProducts(filter = 'food') {
@@ -311,9 +310,8 @@
             const filtered = products.filter(p => p.category === filter);
             
             filtered.forEach(p => {
-                const isPremium = p.dp > 40;
                 grid.innerHTML += `
-                    <div class="product-card p-6 ${isPremium ? 'border-gold/30 bg-yellow-50/10' : ''}">
+                    <div class="product-card p-6">
                         <div class="flex justify-between items-start mb-4">
                             <div class="p-3 bg-gray-50 rounded-2xl">
                                 <i data-lucide="${p.icon}" class="text-dxn-green w-6 h-6"></i>
@@ -328,27 +326,19 @@
                            <span class="text-xs text-gray-400 font-bold">سعر العضو:</span>
                            <span class="price-tag">${p.dp.toFixed(2)} JOD</span>
                         </div>
-
-                        <div class="mt-auto">
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="bg-gray-50 rounded-lg p-2 text-center">
-                                    <div class="text-[9px] text-gray-400 uppercase font-bold">قيمة SV</div>
-                                    <div class="text-xs text-gray-700 font-black">${p.sv.toFixed(2)}</div>
-                                </div>
-                                <div class="${isPremium ? 'bg-yellow-50' : 'bg-green-50'} rounded-lg p-2 text-center">
-                                    <div class="text-[9px] text-gray-400 uppercase font-bold">النوع</div>
-                                    <div class="text-xs text-gray-800 font-bold">${isPremium ? 'استثمار' : 'يومي'}</div>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="w-full py-3 bg-gray-50 text-dxn-green font-bold rounded-xl hover:bg-dxn-green hover:text-white transition-all">إضافة للميزانية</button>
                     </div>
                 `;
             });
             lucide.createIcons();
         }
 
-        function handleCategoryChange(val) { renderProducts(val); }
-        window.onload = () => renderProducts('skin');
+        function handleCategoryChange(val) {
+            renderProducts(val);
+        }
+
+        // تشغيل العرض الأولي
+        window.onload = () => renderProducts('food');
     </script>
 </body>
 </html>
